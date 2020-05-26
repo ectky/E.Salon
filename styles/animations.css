@@ -34,7 +34,10 @@ body.loaded .back-to-top {
   opacity: 1;
 }
 
-a {
+a,
+img,
+h1,
+.back-to-top {
   transition: all 0.5s ease-in-out;
 }
 

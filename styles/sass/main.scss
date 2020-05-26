@@ -1,6 +1,8 @@
 $main-txt: #999999; 
 $dark-gray:rgb(43, 43, 43);
-$light-gray:rgb(192, 192, 192);
+$light-gray:rgb(209, 209, 209);
+$light-pink:rgba(250, 171, 198, 0.705);
+$light-pink-op:rgba(250, 171, 199, 0.411);
 
 @mixin bp($point) {
 
@@ -47,11 +49,31 @@ a{
       "header header header" 
       "main main main" 
       "footer footer footer";
+
+      .back-to-top {
+        opacity: 0;
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        background-color: $light-pink;
+        border-radius: 3px;
+        padding: 0.5em 0.8em;
+        color: $dark-gray;
+        z-index: 1000;
+    
+        &:hover {
+            background-color: $light-pink-op;
+        }
+    
+        i {
+            padding-left: 0.5em;
+        }
+    }
 }
 
 .site-header {
     grid-area: header;
-    box-shadow: -5px 14px 10px -8px rgba(0,0,0,0.56);
+    box-shadow: -5px 14px 10px -8px rgba(0, 0, 0, 0.336);
     margin-bottom: 18px;
     padding: 0.5rem 0.5rem 0 0.5rem;
 
@@ -66,7 +88,7 @@ a{
 
         h1 {
             grid-area: 1;
-            text-shadow: 3px 2px 4px #999999;
+            text-shadow: 3px 2px 4px $main-txt;
             margin: 1rem 0 2rem 0;
 
             @include bp(phone){  
@@ -74,15 +96,24 @@ a{
             }
         }
 
+        h1:hover {
+            color: $main-txt;
+        }
+
         .book-now{
             text-transform: uppercase;
             color: white;
-            background-color: rgba(250, 171, 198, 0.705);
+            background-color: $light-pink;
             text-align: center;
             align-self: center;
             padding: 1rem 0.3rem;
             border-top-right-radius: 10px;
             border-bottom-left-radius: 10px;
+        }
+
+        .book-now:hover {
+            background-color: $light-pink-op;
+            color: $dark-gray;
         }
     }
 
@@ -110,6 +141,10 @@ a{
 
                 a {
                     color: $main-txt;
+                }
+
+                a:hover {
+                    color: $light-gray;
                 }
             }
         }
@@ -174,18 +209,23 @@ a{
         li:not(:last-child) {
             margin-bottom: 1em;
         }
+
+        
+        @include bp(laptop) {
+            font-size: 1.2rem;
+        }
     }
 
     .socials-footer {
         li {
             border-bottom: 1px solid white;
-            font-size: 1.5em;
-            padding-bottom: 1.5em;
+            font-size: 2em;
+            padding-bottom: 1.5rem;
             text-align: center;            
         }
 
         li:not(:last-child) {
-            margin-bottom: 1em;
+            margin-bottom: 1rem;
         }
     }
 
@@ -217,6 +257,10 @@ a{
         
             overflow: hidden;
             object-fit: cover;
+        }
+
+        img:hover {
+            opacity: 0.6;
         }
     }
 
