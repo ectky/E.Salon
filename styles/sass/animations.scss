@@ -1,0 +1,41 @@
+@keyframes slideLeft {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        transform: translate(-3em, -1em);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes slideeven {
+    from {
+        opacity: 0;
+        transform: translate(3em, 1em);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+body.loaded {
+    .site-main {
+        animation: slide 1.5s forwards;
+    }
+
+    .site-header {
+        opacity: 1;
+        animation: slideeven 1s forwards;
+    }
+
+    .back-to-top {
+        opacity: 1;
+    }
+}
+

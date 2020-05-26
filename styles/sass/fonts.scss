@@ -1,0 +1,21 @@
+$heading: #999999; 
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {    
+    font-family: 'Questrial', sans-serif;
+    color: $heading;
+}
+
+h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: 700;
+    font-style: italic;
+}
