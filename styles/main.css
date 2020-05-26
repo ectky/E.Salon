@@ -13,14 +13,27 @@ a {
   grid-area: header;
   box-shadow: -5px 14px 10px -8px rgba(0, 0, 0, 0.56);
   margin-bottom: 18px;
+  padding: 0.5rem 0.5rem 0 0.5rem;
 }
 .site-header .logo-line {
-  display: grid;
-  grid-template-columns: 7fr 2fr;
+  text-align: center;
+}
+@media (min-width: 480px) {
+  .site-header .logo-line {
+    display: grid;
+    grid-template-columns: 7fr 2fr;
+    text-align: unset;
+  }
 }
 .site-header .logo-line h1 {
   grid-area: 1;
   text-shadow: 3px 2px 4px #999999;
+  margin: 1rem 0 2rem 0;
+}
+@media (min-width: 480px) {
+  .site-header .logo-line h1 {
+    margin: 0;
+  }
 }
 .site-header .logo-line .book-now {
   text-transform: uppercase;
@@ -28,22 +41,33 @@ a {
   background-color: rgba(250, 171, 198, 0.705);
   text-align: center;
   align-self: center;
-  padding: 1rem 0;
+  padding: 1rem 0.3rem;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .site-header .site-nav {
   color: #999999;
 }
 .site-header .site-nav ul {
-  display: flex;
   justify-content: center;
   font-style: italic;
   padding: 1rem 1rem;
 }
+@media (min-width: 768px) {
+  .site-header .site-nav ul {
+    display: flex;
+  }
+}
 .site-header .site-nav ul li {
-  margin: 0 3vw;
-  text-align: right;
+  margin: 2vh 3vw;
+  text-align: center;
   font-size: 1.2rem;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .site-header .site-nav ul li {
+    margin: 0 3vw;
+  }
 }
 .site-header .site-nav ul li a {
   color: #999999;
@@ -56,8 +80,12 @@ a {
 .site-footer {
   grid-area: footer;
   background-color: #999999;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+}
+@media (min-width: 480px) {
+  .site-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (min-width: 768px) {
   .site-footer {
@@ -77,6 +105,9 @@ a {
 }
 .site-footer a {
   color: black;
+}
+.site-footer a:hover {
+  color: silver;
 }
 .site-footer .footer-info {
   line-height: 1.5rem;
@@ -116,7 +147,7 @@ a {
 @media (min-width: 768px) {
   .site-footer .ig-pics ul {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 30%);
+    grid-template-rows: repeat(3, 25%);
   }
 }
 @media (min-width: 1024px) {

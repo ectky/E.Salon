@@ -1,5 +1,6 @@
 $main-txt: #999999; 
 $dark-gray:rgb(43, 43, 43);
+$light-gray:rgb(192, 192, 192);
 
 @mixin bp($point) {
 
@@ -52,14 +53,25 @@ a{
     grid-area: header;
     box-shadow: -5px 14px 10px -8px rgba(0,0,0,0.56);
     margin-bottom: 18px;
+    padding: 0.5rem 0.5rem 0 0.5rem;
 
     .logo-line {
-        display: grid;
-        grid-template-columns: 7fr 2fr;
+        text-align: center;
+
+        @include bp(phone){            
+            display: grid;
+            grid-template-columns: 7fr 2fr;
+            text-align: unset;
+        }
 
         h1 {
             grid-area: 1;
             text-shadow: 3px 2px 4px #999999;
+            margin: 1rem 0 2rem 0;
+
+            @include bp(phone){  
+                margin: 0;
+            }
         }
 
         .book-now{
@@ -68,7 +80,9 @@ a{
             background-color: rgba(250, 171, 198, 0.705);
             text-align: center;
             align-self: center;
-            padding: 1rem 0;
+            padding: 1rem 0.3rem;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
         }
     }
 
@@ -76,16 +90,23 @@ a{
         color: $main-txt;
 
         ul {
-            display: flex;
             justify-content: center;
             font-style: italic;
             padding: 1rem 1rem;
 
+            @include bp(mobile){
+                display: flex;
+            }
+
             li {
-                margin: 0 3vw;
-                text-align: right;
+                margin: 2vh 3vw;
+                text-align: center;
                 font-size: 1.2rem;
                 text-transform: uppercase;
+
+                @include bp(mobile){
+                    margin: 0 3vw;
+                }
 
                 a {
                     color: $main-txt;
@@ -102,8 +123,11 @@ a{
 .site-footer {
     grid-area: footer;
     background-color: $main-txt;
-    display: grid;    
-    grid-template-columns: 1fr 1fr;
+
+    @include bp(phone){        
+        display: grid;    
+        grid-template-columns: 1fr 1fr;
+    }
     
     @include bp(mobile) {
         grid-template-columns: repeat(4, 1fr);
@@ -112,6 +136,7 @@ a{
     @include bp(laptop) {
         grid-template-columns: 2fr 1fr 2fr 1fr;
     }
+
 
     h4 {
         text-transform: uppercase;
@@ -122,6 +147,10 @@ a{
 
     a {
         color: black;
+    }
+
+    a:hover {
+        color: $light-gray;
     }
 
     .footer-info {
@@ -173,7 +202,7 @@ a{
 
             @include bp(mobile) {
                 grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 30%);
+                grid-template-rows: repeat(3, 25%);
             }
 
             @include bp(laptop){

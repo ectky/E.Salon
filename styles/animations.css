@@ -34,4 +34,8 @@ body.loaded .back-to-top {
   opacity: 1;
 }
 
+a {
+  transition: all 0.5s ease-in-out;
+}
+
 /*# sourceMappingURL=animations.css.map */
