@@ -1,4 +1,5 @@
 $main-txt: #999999; 
+$dark-gray:rgb(43, 43, 43);
 
 @mixin bp($point) {
 
@@ -21,13 +22,13 @@ $main-txt: #999999;
     }
 
     @else if $point == mobile {
-        @media (min-width: 960px) {
+        @media (min-width: 768px) {
             @content;
         }
     }
 
     @else if $point == phone {
-        @media (min-width: 650px) {
+        @media (min-width: 480px) {
             @content;
         }
     }
@@ -101,22 +102,83 @@ a{
 .site-footer {
     grid-area: footer;
     background-color: $main-txt;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    
+    @include bp(mobile) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    @include bp(laptop) {
+        grid-template-columns: 2fr 1fr 2fr 1fr;
+    }
 
     h4 {
         text-transform: uppercase;
+        color: $dark-gray;
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: black;
+    }
+
+    .footer-info {
+        line-height: 1.5rem;
+        border-bottom: 1px solid white;
+        padding-bottom: 1.5em;
+
+        .logo-txt {
+            font-weight: 700;            
+            white-space: nowrap;
+        }
+    }
+
+    .site-map {
+        li {
+            border-bottom: 1px solid white;
+            font-size: 1rem;
+            padding-bottom: 1.5em;
+        }
+        
+        li:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
+
+    .socials-footer {
+        li {
+            border-bottom: 1px solid white;
+            font-size: 1.5em;
+            padding-bottom: 1.5em;
+            text-align: center;            
+        }
+
+        li:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
+
+    .footer-div {
+        padding: 1.2rem;
     }
 
     .ig-pics {
         ul {            
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 40%);
+            grid-template-rows: repeat(2, 100px);
             grid-gap: 0.3em;
 
-            @include bp(laptop) {
-                grid-template-rows: repeat(2, 150px);
+            @include bp(mobile) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 30%);
+            }
+
+            @include bp(laptop){
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 130px);
             }
         }
 

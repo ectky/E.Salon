@@ -57,20 +57,72 @@ a {
   grid-area: footer;
   background-color: #999999;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+@media (min-width: 768px) {
+  .site-footer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .site-footer {
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+  }
 }
 .site-footer h4 {
   text-transform: uppercase;
+  color: #2b2b2b;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.site-footer a {
+  color: black;
+}
+.site-footer .footer-info {
+  line-height: 1.5rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 1.5em;
+}
+.site-footer .footer-info .logo-txt {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.site-footer .site-map li {
+  border-bottom: 1px solid white;
+  font-size: 1rem;
+  padding-bottom: 1.5em;
+}
+.site-footer .site-map li:not(:last-child) {
+  margin-bottom: 1em;
+}
+.site-footer .socials-footer li {
+  border-bottom: 1px solid white;
+  font-size: 1.5em;
+  padding-bottom: 1.5em;
+  text-align: center;
+}
+.site-footer .socials-footer li:not(:last-child) {
+  margin-bottom: 1em;
+}
+.site-footer .footer-div {
+  padding: 1.2rem;
 }
 .site-footer .ig-pics ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 40%);
+  grid-template-rows: repeat(2, 100px);
   grid-gap: 0.3em;
+}
+@media (min-width: 768px) {
+  .site-footer .ig-pics ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 30%);
+  }
 }
 @media (min-width: 1024px) {
   .site-footer .ig-pics ul {
-    grid-template-rows: repeat(2, 150px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 130px);
   }
 }
 .site-footer .ig-pics img {

@@ -1,8 +1,29 @@
+:root {
+    --fs-phone: 12px;
+    --fs-mobile: 14px;
+    --fs-laptop: 16px;
+    --fs-desktop: 18px;
+    --fs-desktoplarge: 20px;
+}
+
 $heading: #999999; 
 
 body {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: var(--fs-phone);
+
+    @media (min-width: 1600px) {
+        font-size: var(--fs-desktoplarge);
+    }
+    @media (min-width: 1250px) {
+        font-size: var(--fs-desktop);
+    }
+    @media (min-width: 1024px) {
+        font-size: var(--fs-laptop);
+    }
+    @media (min-width: 768px) {
+        font-size: var(--fs-mobile);
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {    
@@ -14,6 +35,12 @@ h1 {
     font-size: 4rem;
     text-transform: uppercase;
 }
+
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
 
 .bold {
     font-weight: 700;
