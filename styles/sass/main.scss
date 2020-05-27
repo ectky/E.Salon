@@ -1,6 +1,7 @@
 $main-txt: #999999; 
 $dark-gray:rgb(43, 43, 43);
 $light-gray:rgb(209, 209, 209);
+$dark-pink:rgb(180, 112, 136);
 $light-pink:rgba(250, 171, 198, 0.705);
 $light-pink-op:rgba(250, 171, 199, 0.411);
 
@@ -39,6 +40,33 @@ $light-pink-op:rgba(250, 171, 199, 0.411);
 
 a{
     text-decoration: none;
+}
+
+.unseparable {                
+    white-space: nowrap;
+}
+
+.logo-txt {
+    font-weight: 700;            
+    white-space: nowrap;
+}
+
+h2 {
+    margin: 1.5rem 0 1rem 0;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+h5 {
+    margin: 1rem 0 1rem 0;
+    text-transform: uppercase;
+    font-style: italic;
+    color: $light-pink;
+    font-weight: 700;
+}
+
+p {
+    margin: 1rem 0 1rem 0;
 }
 
 .container {
@@ -91,7 +119,7 @@ a{
             text-shadow: 3px 2px 4px $main-txt;
             margin: 1rem 0 2rem 0;
 
-            @include bp(phone){  
+            @include bp(mobile){  
                 margin: 0;
             }
         }
@@ -153,6 +181,7 @@ a{
 
 .site-main {
     grid-area: main;
+    margin: 0 1rem 1.5rem 1rem;
 }
 
 .site-footer {
@@ -193,10 +222,6 @@ a{
         border-bottom: 1px solid white;
         padding-bottom: 1.5em;
 
-        .logo-txt {
-            font-weight: 700;            
-            white-space: nowrap;
-        }
     }
 
     .site-map {

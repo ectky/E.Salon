@@ -8,16 +8,12 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  line-height: 24px;
   font-size: var(--fs-phone);
 }
-@media (min-width: 1600px) {
+@media (min-width: 768px) {
   body {
-    font-size: var(--fs-desktoplarge);
-  }
-}
-@media (min-width: 1250px) {
-  body {
-    font-size: var(--fs-desktop);
+    font-size: var(--fs-mobile);
   }
 }
 @media (min-width: 1024px) {
@@ -25,43 +21,56 @@ body {
     font-size: var(--fs-laptop);
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1250px) {
   body {
-    font-size: var(--fs-mobile);
+    font-size: var(--fs-desktop);
+  }
+}
+@media (min-width: 1600px) {
+  body {
+    font-size: var(--fs-desktoplarge);
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: "Questrial", sans-serif;
   color: #999999;
-}
-
-h1 {
   font-size: 4rem;
   text-transform: uppercase;
 }
 
+h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  color: #999999;
+}
+
 h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 h4 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .bold {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.logo-txt {
+  font-family: "Questrial", sans-serif;
   font-weight: 700;
   font-style: italic;
 }

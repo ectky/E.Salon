@@ -2,6 +2,33 @@ a {
   text-decoration: none;
 }
 
+.unseparable {
+  white-space: nowrap;
+}
+
+.logo-txt {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+h2 {
+  margin: 1.5rem 0 1rem 0;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h5 {
+  margin: 1rem 0 1rem 0;
+  text-transform: uppercase;
+  font-style: italic;
+  color: rgba(250, 171, 198, 0.705);
+  font-weight: 700;
+}
+
+p {
+  margin: 1rem 0 1rem 0;
+}
+
 .container {
   display: grid;
   grid-template-rows: auto;
@@ -47,7 +74,7 @@ a {
   text-shadow: 3px 2px 4px #999999;
   margin: 1rem 0 2rem 0;
 }
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .site-header .logo-line h1 {
     margin: 0;
   }
@@ -102,6 +129,7 @@ a {
 
 .site-main {
   grid-area: main;
+  margin: 0 1rem 1.5rem 1rem;
 }
 
 .site-footer {
@@ -140,10 +168,6 @@ a {
   line-height: 1.5rem;
   border-bottom: 1px solid white;
   padding-bottom: 1.5em;
-}
-.site-footer .footer-info .logo-txt {
-  font-weight: 700;
-  white-space: nowrap;
 }
 .site-footer .site-map li {
   border-bottom: 1px solid white;

@@ -1,0 +1,116 @@
+$main-txt: #999999; 
+$dark-gray:rgb(43, 43, 43);
+$light-gray:rgb(209, 209, 209);
+$light-pink:rgba(250, 171, 198, 0.705);
+$light-pink-op:rgba(250, 171, 199, 0.411);
+
+@mixin bp($point) {
+
+    @if $point == desktoplarge {
+        @media (min-width: 1600px) {
+            @content;
+        }
+    }
+
+    @else if $point == desktop {
+        @media (min-width: 1250px) {
+            @content;
+        }
+    }
+
+    @else if $point == laptop {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point == mobile {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $point == phone {
+        @media (min-width: 480px) {
+            @content;
+        }
+    }
+}
+
+.about{
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem 2rem;
+
+    @include bp(mobile) {  
+        margin: 0;      
+        background-image: url("../imageS/sidebar-bg-lrg.png");
+        background-position: right top;
+        background-size: 300px auto;
+        background-color: transparent;
+        background-repeat: repeat-y;
+        display: grid;
+        grid-template-columns: 2fr 250px;
+    }
+
+    @include bp(desktop){
+        background-size: 500px auto;        
+        grid-template-columns: 2fr 450px;
+    }
+
+    .top-img {
+        grid-column: 1/-1;
+        img {
+            width: 100%;
+        }
+    }
+    
+    img {
+        vertical-align: middle;
+        border-style: none;
+    }
+
+    .content {
+        padding-right: 2rem;
+    }
+
+    .sidebar {
+        margin-bottom: 1rem;
+        background-image: url("../images/sidebar-bg-lrg.png");
+        background-size: contain;
+        padding: 5%;
+        width: auto;
+        
+        @include bp(mobile) { 
+            justify-self: right;
+            background: none;
+            max-width: 260px;
+            width: 250px;
+            padding: 0;
+        }
+
+        
+        @include bp(desktop){ 
+            padding: 0 0 0 4rem;
+            max-width: 460px;
+            width: 450px;
+        }
+
+        .googleMap {
+            margin: 1.5rem 0;
+            width:100%;
+            height:400px;
+        }
+
+        li {
+            margin: 1rem 0.5rem;
+
+            a{
+                color: black;
+            }
+
+            i {
+                width: 10%;
+            }
+        }
+    }
+}
