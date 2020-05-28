@@ -35,3 +35,12 @@ function initMap() {
   };
   var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
+
+function burgerMenu() {
+  var x = document.getElementById("my-links");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}

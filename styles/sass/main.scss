@@ -119,9 +119,9 @@ p {
             text-shadow: 3px 2px 4px $main-txt;
             margin: 1rem 0 2rem 0;
 
-            @include bp(mobile){  
+            /** @include bp(mobile){  
                 margin: 0;
-            }
+            }**/
         }
 
         h1:hover {
@@ -148,13 +148,28 @@ p {
     .site-nav {
         color: $main-txt;
 
+        .burger-menu {
+            float: right;
+            margin: 1rem 0;
+
+            i{
+                color: $main-txt;
+                font-size: 2rem;
+            }
+
+            @include bp(mobile){
+                display: none;
+            }
+        }
+
         ul {
             justify-content: center;
             font-style: italic;
             padding: 1rem 1rem;
+            display: none;
 
             @include bp(mobile){
-                display: flex;
+                display: flex !important;
             }
 
             li {
@@ -191,10 +206,6 @@ p {
     @include bp(phone){        
         display: grid;    
         grid-template-columns: 1fr 1fr;
-    }
-    
-    @include bp(mobile) {
-        grid-template-columns: repeat(4, 1fr);
     }
     
     @include bp(laptop) {
@@ -264,11 +275,6 @@ p {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(2, 100px);
             grid-gap: 0.3em;
-
-            @include bp(mobile) {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 25%);
-            }
 
             @include bp(laptop){
                 grid-template-columns: repeat(3, 1fr);
