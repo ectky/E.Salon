@@ -15,7 +15,7 @@
 <body>
     <a name="top"></a>
     <div class="container">
-        <a href="#top" class="back-to-top">Back to top<i class="fas fa-arrow-circle-up"></i></a>        
+        <a href="#top" class="back-to-top">Back to top<i class="fas fa-arrow-circle-up"></i></a>
         <header class="site-header">
             <div class="logo-line">
                 <a href="index.html">
@@ -23,7 +23,7 @@
                 </a>
                 <a href="book.html" class="book-now">резервирай сега</a>
             </div>
-            <nav class="site-nav">
+            <nav class="site-nav" id="navbar">
                 <a href="javascript:void(0);" class="burger-menu" onclick="burgerMenu()">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -35,15 +35,123 @@
                 </ul>
             </nav>
         </header>
+
         <main class="site-main">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio tenetur, laboriosam officia non quaerat
-                minus praesentium? Nihil alias voluptatibus accusantium quas, ad suscipit velit assumenda fugit, sequi,
-                quasi iure earum.</p>
+            <div class="pricing">
+                <section class="hair-services">
+                    <h2>фризйорски услуги</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>подстригване</th>
+                                <td>Жени - 45 лв</td>
+                                <td>Мъже - 30 лв</td>
+                                <td>Деца - 25 лв</td>
+                                <td>Бретон - 10 лв</td>
+                            </tr>
+                            <tr>
+                                <th>стилизиране</th>
+                                <td>Изсушаване - 20 лв</td>
+                                <td>Изправяне - 30 лв</td>
+                                <td>Къдрене - 35 лв</td>
+                                <td>Прическа - 40 лв</td>
+                            </tr>
+                            <tr>
+                                <th>боядисване</th>
+                                <td>Израстване - 45 лв</td>
+                                <td>Къса коса - 80 лв</td>
+                                <td>Средна коса - 100 лв</td>
+                                <td>Дълга коса - 120 лв</td>
+                            </tr>
+                            <tr>
+                                <th>кичури</th>
+                                <td>Частично - 45 лв</td>
+                                <td>Цяла коса - 80 лв</td>
+                                <td>Тониране - 25 лв</td>
+                                <td>По поръчка - 100 лв</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="cosmetic-services">
+                    <h2>Козметични услуги</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>кола маска</th>
+                                <td>Вежди - 45 лв</td>
+                                <td>Устни - 30 лв</td>
+                                <td>Брадичка - 25 лв</td>
+                                <td>Бузи - 10 лв</td>
+                            </tr>
+                            <tr>
+                                <th>кола маска</th>
+                                <td>Ръце - 45 лв</td>
+                                <td>Крака - 30 лв</td>
+                                <td>Бикини - 25 лв</td>
+                                <td>Гръб - 10 лв</td>
+                            </tr>
+                            <tr>
+                                <th>масаж на лицето</th>
+                                <td>Повдигане - 20 лв</td>
+                                <td>Възстановяване - 30 лв</td>
+                                <td>Експресно - 35 лв</td>
+                                <td>Дермаплан - 40 лв</td>
+                            </tr>
+                            <tr>
+                                <th>добавки</th>
+                                <td>Био продукти - 45 лв</td>
+                                <td>Ексфолиация - 80 лв</td>
+                                <td>Екстракция - 100 лв</td>
+                                <td>Очна зона - 120 лв</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="procedures">
+                    <h2>бутикови процедури</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>почистване</th>
+                                <td>Водно - 45 лв</td>
+                                <td>Лицево - 30 лв</td>
+                                <td>Пилинг - 25 лв</td>
+                                <td>Хидратация - 10 лв</td>
+                            </tr>
+                            <tr>
+                                <th>терапии</th>
+                                <td>OSMOPEEL - 20 лв</td>
+                                <td>Хиалурон - 30 лв</td>
+                                <td>Спирулина - 35 лв</td>
+                                <td>ESTHELIFT - 40 лв</td>
+                            </tr>
+                            <tr>
+                                <th>процедури</th>
+                                <td>Лифтмасаж с LPG - <span class="unseparable"> 45 лв</span></td>
+                                <td>Радиочестотен лифтинг - <span class="unseparable">80 лв</span></td>
+                                <td>Супертерапия 3 в 1 - <span class="unseparable">100 лв</span></td>
+                                <td>Кислородна мезотерапия - <span class="unseparable">120 лв</span></td>
+                            </tr>
+                            <tr>
+                                <th>процедури</th>
+                                <td>LPG борба с целулита - <span class="unseparable">45 лв</span></td>
+                                <td>B.D.R. мезотерпия - <span class="unseparable">80 лв</span></td>
+                                <td>"Сърцето на океана" - <span class="unseparable">25 лв</span></td>
+                                <td>По поръчка - <span class="unseparable">100 лв</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
         </main>
+
         <footer class="site-footer">
             <div class="text footer-div">
                 <h4>За нас</h4>
-                <p class="footer-info">Козметично студио <span class="logo-txt">E &#8226; Salon</span> е едно от първите и най-успешни в бранша. Услугите, които предлагаме, са силно персонализирани и ние осъзнаваме, че наред с нашето студио и процедури, клиентите избират и нашите козметици.</p>
+                <p class="footer-info">Козметично студио <span class="logo-txt">E &#8226; Salon</span> е едно от първите
+                    и най-успешни в бранша. Услугите, които предлагаме, са силно персонализирани и ние осъзнаваме, че
+                    наред с нашето студио и процедури, клиентите избират и нашите козметици.</p>
             </div>
 
             <div class="site-map footer-div">
@@ -96,7 +204,7 @@
             </div>
 
             <div class="copyright footer-div">
-                <h4>© E &#8226; salon</h4>                
+                <h4>© E &#8226; salon</h4>
 
                 <ul class="socials-footer">
                     <li><a href="https://www.facebook.com/ectky"><i class="fab fa-facebook-f"></i></a></li>

@@ -59,6 +59,14 @@ p {
   margin-bottom: 18px;
   padding: 0.5rem 0.5rem 0 0.5rem;
 }
+@media (min-width: 768px) {
+  .site-header .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 1px 3px 0px #858585;
+  }
+}
 .site-header .logo-line {
   text-align: center;
 }

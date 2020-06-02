@@ -1,3 +1,56 @@
-
+.pricing h2 {
+  text-align: center;
+}
+.pricing table {
+  margin: auto;
+}
+.pricing table tbody {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 10vw;
+}
+@media (min-width: 480px) {
+  .pricing table tbody {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 10vw;
+  }
+}
+@media (min-width: 1024px) {
+  .pricing table tbody {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5vw;
+  }
+}
+.pricing table th {
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .pricing table th {
+    padding: 0.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .pricing table td {
+    padding: 0.25rem;
+  }
+}
+.pricing table tr {
+  display: grid;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .pricing table tr {
+    width: 30vw;
+  }
+}
+@media (min-width: 1024px) {
+  .pricing table tr {
+    width: 20vw;
+  }
+}
 
 /*# sourceMappingURL=pricing.css.map */
