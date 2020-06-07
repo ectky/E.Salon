@@ -1,0 +1,123 @@
+.procedures {
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem 2rem;
+}
+@media (min-width: 768px) {
+  .procedures {
+    margin: 0;
+    background-image: url("../imageS/sidebar-bg-lrg.png");
+    background-position: left top;
+    background-size: 300px auto;
+    background-color: transparent;
+    background-repeat: repeat-y;
+    display: grid;
+    grid-template-columns: 250px 2fr;
+    grid-template-areas: "aside main";
+  }
+}
+@media (min-width: 1250px) {
+  .procedures {
+    grid-template-columns: 250px 1fr 250px;
+    grid-template-areas: "aside main gallery";
+  }
+}
+.procedures .procedures-sidebar {
+  grid-area: aside;
+  margin: 1rem 0;
+  background-image: url("../images/sidebar-bg-lrg.png");
+  background-size: contain;
+  padding: 5%;
+  width: auto;
+}
+@media (min-width: 768px) {
+  .procedures .procedures-sidebar {
+    justify-self: right;
+    background: none;
+    max-width: 260px;
+    width: 250px;
+    padding: 0;
+  }
+}
+.procedures .procedures-sidebar .ui-menu {
+  border: none;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+}
+@media (min-width: 768px) {
+  .procedures .procedures-sidebar .ui-menu {
+    margin-right: 1rem;
+  }
+}
+.procedures .procedures-sidebar .ui-menu .ui-widget-header {
+  font-size: 1.5rem;
+  color: #b47088;
+  padding: 0.5rem;
+  font-style: italic;
+}
+@media (min-width: 1250px) {
+  .procedures .procedures-sidebar .ui-menu .ui-widget-header {
+    padding-bottom: 0.5rem;
+  }
+}
+.procedures .procedures-sidebar .ui-menu .ui-menu-item {
+  background: none;
+}
+@media (min-width: 1250px) {
+  .procedures .procedures-sidebar .ui-menu .ui-menu-item-wrapper {
+    padding: 0.5rem 0.3rem;
+  }
+}
+.procedures .procedures-sidebar .ui-menu .ui-state-active {
+  background: rgba(250, 171, 199, 0.411);
+  color: #2b2b2b;
+  border: none;
+  box-sizing: border-box;
+}
+@media (min-width: 1250px) {
+  .procedures .procedures-sidebar .ui-menu .ui-state-active {
+    padding: 0.5rem 1rem;
+  }
+}
+.procedures .procedures-sidebar .ui-menu a:hover {
+  color: #2b2b2b;
+}
+.procedures .content {
+  grid-area: main;
+}
+@media (min-width: 768px) {
+  .procedures .content {
+    margin-left: 2.5rem;
+  }
+}
+@media (min-width: 1250px) {
+  .procedures .content {
+    margin-right: 2rem;
+  }
+}
+@media (min-width: 1250px) {
+  .procedures .gallery {
+    grid-area: gallery;
+  }
+}
+.procedures .gallery .img-container:nth-of-type(even) {
+  text-align: right;
+}
+.procedures .gallery .img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+@media (min-width: 480px) {
+  .procedures .gallery .img-container img {
+    width: 300px;
+    height: 250px;
+  }
+}
+@media (min-width: 1250px) {
+  .procedures .gallery .img-container img {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/*# sourceMappingURL=procedures.css.map */

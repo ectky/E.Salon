@@ -37,8 +37,14 @@ body.loaded .back-to-top {
 a,
 img,
 h1,
-.back-to-top {
+.back-to-top,
+.shadow-bg,
+input {
   transition: all 0.5s ease-in-out;
+}
+
+.ui-state-active {
+  transition: all 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=animations.css.map */

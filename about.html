@@ -12,7 +12,7 @@
     <script src="js/script.js"></script>
 </head>
 
-<body>
+<body onload="bodyLoaded()" onscroll="scrollPage()">
     <a name="top"></a>
     <div class="container">
         <a href="#top" class="back-to-top">Back to top<i class="fas fa-arrow-circle-up"></i></a>
@@ -21,7 +21,7 @@
                 <a href="index.html">
                     <h1><span class="bold">E &#8226; </span>salon</h1>
                 </a>
-                <a href="book.html" class="book-now">резервирай сега</a>
+                <a href="book.html" class="book-now btn">резервирай сега</a>
             </div>
             <nav class="site-nav" id="navbar">
                 <a href="javascript:void(0);" class="burger-menu" onclick="burgerMenu()">
@@ -71,7 +71,7 @@
                         творчеството в себе си и да се вдъхновим от креативността на другите, което ни позволява да
                         доставим изключително обслужване на всички наши гости.</p>
                 </div>
-                <div class="sidebar">
+                <aside class="sidebar">
                     <h5>контакти</h5>
                     <ul class="socials">
                         <li><i class="fas fa-map-marker-alt"></i>София, ул. "Любов" 12, <span class="unseparable">офис
@@ -92,7 +92,7 @@
                         <li><i class="far fa-clock"></i>Сряда и петък: <span class="unseparable">8:30-19 ч</span></li>
                         <li><i class="far fa-clock"></i>Събота: <span class="unseparable">9-17 ч</span></li>
                     </ul>
-                </div>
+                </aside>
             </div>
         </main>
         <footer class="site-footer">

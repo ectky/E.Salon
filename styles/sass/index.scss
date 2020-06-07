@@ -1,0 +1,409 @@
+$main-txt: #999999; 
+$dark-gray:rgb(43, 43, 43);
+$op-gray:rgba(43, 43, 43,0.3);
+$light-gray:rgb(209, 209, 209);
+$lightest-pink:rgb(250, 237, 242);
+$dark-pink:rgb(180, 112, 136);
+$light-pink:rgba(250, 171, 198, 0.705);
+$light-pink-op:rgba(250, 171, 199, 0.411);
+
+@mixin bp($point) {
+
+    @if $point == desktoplarge {
+        @media (min-width: 1600px) {
+            @content;
+        }
+    }
+
+    @else if $point == desktop {
+        @media (min-width: 1250px) {
+            @content;
+        }
+    }
+
+    @else if $point == laptop {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point == mobile {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $point == 690 {
+        @media (min-width: 690px) {
+            @content;
+        }
+    }
+
+    @else if $point == phone {
+        @media (min-width: 480px) {
+            @content;
+        }
+    }
+}
+
+.home {
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem 2rem;
+
+    .prev, .next {
+        display: none;
+    }
+
+    @include bp(mobile) {  
+        margin: 0;      
+        background-image: url("../imageS/sidebar-bg-lrg.png");
+        background-position: right top;
+        background-size: 300px auto;
+        background-color: transparent;
+        background-repeat: repeat-y;
+    }
+
+    @include bp(laptop){   
+        .prev, .next {
+            display: unset;
+            padding: 1rem;
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    }
+
+    @include bp(desktop){
+        
+        background-size: 500px auto;  
+    }
+
+
+    .main-container {
+        @include bp(mobile) {                
+            display: grid;
+            grid-template-columns: 2fr 250px;
+            grid-template-areas: 
+                "main aside";
+        }  
+
+        
+        @include bp(desktop){
+            background-size: 500px auto;        
+            grid-template-columns: 2fr 450px;
+        }
+    }
+
+    .mySlides {
+        display: none
+    }
+
+    img {vertical-align: middle;}
+
+    .slideshow-container {
+        grid-column: -1 / 1;
+        position: relative;
+        margin: auto;
+    }
+
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+
+    @media only screen and (max-width: 300px) {
+        .prev, .next,.text {font-size: 11px}
+    }
+
+    .content {
+        grid-area: main;
+        padding-right: 2rem;
+        .thank-you {
+            .book-btn {
+                background-color: $main-txt;
+                color: $dark-gray;
+    
+                &:hover{
+                color: $main-txt;
+                background-color: $dark-gray;
+                }
+            }
+        }
+
+        .about-us {
+            background-image: url("../images/magnolia.png");
+            background-size: 300% auto;
+            background-attachment: fixed;;
+            background-repeat: no-repeat;
+            margin: 1rem 0;
+
+            @include bp(mobile){              
+                background-size: 200% auto;
+            }
+
+            @include bp(mobile){              
+                background-size: 100% auto;
+                background-position: right;
+            }
+
+            h5{
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            h2{
+                color: $dark-gray;
+                font-weight: 500;
+                margin-top: 0;
+                font-size: 3rem;
+                font-style: normal;
+            }
+
+            .about-btn {    
+                background: none;            
+                color: $dark-gray;
+                border: 1px solid $dark-gray;
+    
+                &:hover{
+                    background-color: $light-pink;
+                }
+            }
+        }
+        
+    }
+
+    .procedures-gallery {
+        grid-column: 1;
+        display: grid;
+        grid-template-rows: repeat(8, 280px);
+
+        @include bp(690) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 280px);
+        }
+
+        @include bp(laptop){
+            grid-column: -1 / 1;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 280px);
+        }
+
+        .procedure {
+            overflow: hidden;
+            position: relative;
+            width: 100%;                              
+            background-position: center;   
+            background-size: cover;
+            height: 280px;
+            background-color: $lightest-pink;
+            border-bottom: 0.5px solid white;
+
+            h3 {                    
+                color: rgb(43, 43, 43);
+                padding-top: 3rem !important;
+            }
+
+            h3, h4 {
+                padding-left: 1rem;
+                padding-top: 1rem;
+            }
+
+            .shadow-bg {  
+                display: inline-block; 
+                width: 100%;
+                height: 100%; 
+                
+            }
+
+            &:nth-of-type(1){
+                background-image: url("../images/bdr2.jpg");                   
+            }
+            &:nth-of-type(4){
+                background-image: url("../images/Mesoestetic.jpg");                   
+            }
+            &:nth-of-type(5){
+                background-image: url("../images/bdr.jpeg");                   
+            }
+            &:nth-of-type(8){
+                background-image: url("../images/summerbody.jpg");                   
+            }
+
+            @include bp(690){
+                border: none;
+            }
+
+            @include bp(laptop){
+                background-image: none !important;
+                background-color: $lightest-pink !important;
+                &:nth-of-type(1){
+                    background-image: url("../images/bdr2.jpg")!important;                   
+                }
+                &:nth-of-type(3){
+                    background-image: url("../images/Mesoestetic.jpg")!important;                   
+                }
+                &:nth-of-type(6){
+                    background-image: url("../images/bdr.jpeg")!important;                   
+                }
+                &:nth-of-type(8){
+                    background-image: url("../images/summerbody.jpg")!important;                   
+                }
+            }
+
+            &:hover{
+                .shadow-bg {               
+                    background-color: $op-gray ;
+                }
+
+                h3, h4 {                    
+                    color: white;   
+                }
+            }            
+        }
+    }
+
+    .index-sidebar {
+        grid-area: aside;
+        margin: 1rem 0;
+        background-image: url("../images/sidebar-bg-lrg.png");
+        background-size: contain;
+        padding: 5%;
+        width: auto;
+        
+        @include bp(mobile) { 
+            justify-self: right;
+            background: none;
+            max-width: 260px;
+            width: 250px;
+            padding: 0;
+        }
+
+        
+        @include bp(desktop){ 
+            padding: 0 0 0 4rem;
+            max-width: 460px;
+            width: 450px;
+        }
+
+        .voucher {
+            text-align: center;
+
+            h4{
+                text-align: initial;
+                color: $dark-gray;
+                font-weight: 500;
+            }
+
+            img {                
+                margin: 1rem 0;
+
+                @include bp(desktop){
+                    width: 70%;
+                }
+            }
+        }
+
+        .subscribe {
+            margin: 1rem 0;
+            text-align: center;
+
+            h4 {
+                font-style: italic;
+                color: $dark-gray;
+            }
+
+            input {
+                width: 80%;
+                box-sizing: border-box;
+                padding: 0.5rem;
+                font-style: italic;
+                margin: 0.8rem 0;
+                border: 0.5px solid $op-gray;                
+            }
+
+            input[type="submit"]{
+                background-color: $op-gray;
+                width: 60%;
+
+                &:hover {
+                    background-color: $lightest-pink;
+                }
+            }
+        }
+    }
+
+    .index-f {        
+        grid-column: -1 / 1;
+        margin: 1rem 0;
+
+        h2{
+            position: absolute;
+            color: $dark-gray;
+            text-transform: capitalize;
+
+            @include bp(mobile){                
+                padding-left: 1rem;
+            }
+        }
+    }
+}

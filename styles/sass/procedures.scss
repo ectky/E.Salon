@@ -1,0 +1,178 @@
+$main-txt: #999999; 
+$dark-gray:rgb(43, 43, 43);
+$op-gray:rgba(43, 43, 43,0.3);
+$light-gray:rgb(209, 209, 209);
+$lightest-pink:rgb(250, 237, 242);
+$dark-pink:rgb(180, 112, 136);
+$light-pink:rgba(250, 171, 198, 0.705);
+$light-pink-op:rgba(250, 171, 199, 0.411);
+
+@mixin bp($point) {
+
+    @if $point == desktoplarge {
+        @media (min-width: 1600px) {
+            @content;
+        }
+    }
+
+    @else if $point == desktop {
+        @media (min-width: 1250px) {
+            @content;
+        }
+    }
+
+    @else if $point == laptop {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point == mobile {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $point == 690 {
+        @media (min-width: 690px) {
+            @content;
+        }
+    }
+
+    @else if $point == phone {
+        @media (min-width: 480px) {
+            @content;
+        }
+    }
+}
+
+.procedures {
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem 2rem;
+
+    @include bp(mobile) {  
+        margin: 0;      
+        background-image: url("../imageS/sidebar-bg-lrg.png");
+        background-position: left top;
+        background-size: 300px auto;
+        background-color: transparent;
+        background-repeat: repeat-y;
+        display: grid;
+        grid-template-columns: 250px 2fr ;
+        grid-template-areas: 
+            "aside main";
+    }
+
+    @include bp(desktop){          
+        grid-template-columns: 250px 1fr 250px; 
+        grid-template-areas: 
+            "aside main gallery";
+    }
+
+    .procedures-sidebar{
+        grid-area: aside;
+        margin: 1rem 0;
+        background-image: url("../images/sidebar-bg-lrg.png");
+        background-size: contain;
+        padding: 5%;
+        width: auto;
+        
+        @include bp(mobile) { 
+            justify-self: right;
+            background: none;
+            max-width: 260px;
+            width: 250px;
+            padding: 0;
+        }    
+
+        .ui-menu {  
+            border: none;
+            background: none;
+            font-family: 'Montserrat', sans-serif;
+
+            @include bp(mobile){                
+                margin-right: 1rem;
+            }
+
+            .ui-widget-header {
+                font-size: 1.5rem;
+                color: $dark-pink;
+                padding: 0.5rem;
+                font-style: italic;
+
+                @include bp(desktop){
+                    padding-bottom: 0.5rem; 
+                }
+            }
+
+            .ui-menu-item {
+                background: none;
+            }
+
+            .ui-menu-item-wrapper{
+                @include bp(desktop){
+                    padding: 0.5rem 0.3rem; 
+                }
+            }
+
+            .ui-state-active {
+                background: $light-pink-op;
+                color: $dark-gray;
+                border: none;
+                box-sizing: border-box;
+
+                @include bp(desktop){
+                    padding: 0.5rem 1rem; 
+                }
+            }
+
+            a:hover {
+                color: $dark-gray;
+            }
+        }
+    }
+
+    .content {
+        grid-area: main;
+
+        @include bp(mobile){   
+            margin-left: 2.5rem;
+        }
+
+        @include bp(desktop){   
+            margin-right: 2rem;
+        }
+
+    }
+
+    .gallery {
+        @include bp(desktop){
+            grid-area: gallery;
+        }
+
+        .img-container {
+
+            &:nth-of-type(even){
+                text-align: right;
+            }
+
+            img{
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+
+                @include bp(phone){
+                    width: 300px;
+                    height: 250px;
+                }
+
+                @include bp(desktop){
+                    width: 100%;
+                    height: 250px;
+                }
+                
+            }
+        }
+    }
+    
+}

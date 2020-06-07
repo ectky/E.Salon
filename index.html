@@ -10,18 +10,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body onload="bodyLoaded()" onscroll="scrollPage()" >
     <a name="top"></a>
     <div class="container">
-        <a href="#top" class="back-to-top">Back to top<i class="fas fa-arrow-circle-up"></i></a>        
+        <a href="#top" class="back-to-top">Back to top<i class="fas fa-arrow-circle-up"></i></a>
         <header class="site-header">
             <div class="logo-line">
                 <a href="index.html">
                     <h1><span class="bold">E &#8226; </span>salon</h1>
                 </a>
-                <a href="book.html" class="book-now">резервирай сега</a>
+                <a href="book.html" class="book-now btn">резервирай сега</a>
             </div>
             <nav class="site-nav" id="navbar">
                 <a href="javascript:void(0);" class="burger-menu" onclick="burgerMenu()">
@@ -36,14 +37,140 @@
             </nav>
         </header>
         <main class="site-main">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio tenetur, laboriosam officia non quaerat
-                minus praesentium? Nihil alias voluptatibus accusantium quas, ad suscipit velit assumenda fugit, sequi,
-                quasi iure earum.</p>
+            <div class="home">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="images/goodhair.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="images/makeup.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="images/stylists.jpg" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <br>
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+                
+                <div class="main-container">    
+                    <div class="content">
+                        <div class="thank-you">
+                            <h2>Благодарим Ви!</h2>
+                            <p>Ние сме щастливи и поразени от размерите на подкрепата и добротата на нашите клиенти. Мнозина
+                                питаха как могат да продължат да показват подкрепата си през това време.</p>
+                            <p>Ако искате да запишете своят час в <span class="logo-txt">E &#8226; Salon</span>, който ще
+                                бъде
+                                осъществен в най-скоро време, моля кликнете тук:</p>
+                            <button href="book.html" class="book-btn btn">Резервирай</button>
+                            <p>Нямаме търпение да се видим скоро!</p>
+                            <p>С любов и благодарност, екипът на <span class="logo-txt">E &#8226; Salon</span>.</p>
+                        </div>
+                        <div class="about-us">
+                            <h5>oт 1995г.</h5>
+                            <h2>E &#8226; Salon</h2>
+                            <p>Имаме опита и волята да бъдем сред най-добрите. Дължим успеха си на доверието и лоялността на
+                                нашите клиенти. Основните ни ценности са честност, почтеност, уважение към клиента и
+                                зачитане на
+                                неговите реални потребности. Вярваме в професионалния подход без компромис. Извършваме само
+                                изпитани и доказано ефективни козметични услуги под контрола на дерматолозите от
+                                Дерматологичен
+                                център <span class="logo-txt">E &#8226; Salon</span>. Не спираме да се учим и
+                                усъвършенстваме, както и да обновяваме апаратурата и
+                                продуктите, които ползваме, спрямо последните иновации в грижата за кожата.</p>
+                            <button href="about.html" class="about-btn btn">Прочети още</button>
+                        </div>                    
+                    </div>
+                    <aside class="index-sidebar">
+                        <div class="voucher">
+                            <h4>Вземете ваучер за безплатни процедури в <span class="logo-txt">E &#8226; Salon</span></h4>
+                            <img src="images/Voucher_Home_Pagе-04.png" alt="voucher" >
+                        </div>
+                        <div class="subscribe">
+                            <h4>Абонирайте се, за да получавате ежеседмични оферти от нас</h4>
+                            <form action="post">
+                                <input type="text" placeholder="Име...">
+                                <input type="text" placeholder="Имейл...">
+                                <input class="btn" type="submit" value="Абонирай се">
+                            </form>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="procedures-gallery">
+                    <a href="procedures.html" class="procedure">
+                        <div class="shadow-bg">
+                            <h4>Процедури</h4>
+                            <h3>Лифтмасаж с LPG</h3>
+                        </div>
+                    </a>
+                    <a href="procedures.html" class="procedure">
+                        <div class="shadow-bg">
+                            <h4>Процедури</h4>
+                            <h3>Супертерапия <span class="unseparable">3 в 1</span></h3>
+                        </div>
+                    </a>
+                    <a href="procedures.html" class="procedure">
+                        <div class="shadow-bg">
+                            <h4>Процедури</h4>
+                            <h3>"Сърцето на океана"</h3>
+                        </div>
+                    </a>
+                    <a href="procedures.html" class="procedure">
+                        <div class="shadow-bg">
+                            <h4>Процедури</h4>
+                            <h3>Кислородна мезотерапия</h3>
+                        </div>
+                    </a>
+                    <a href="procedures.html" class="procedure">
+                        <div class="shadow-bg">
+                            <h4>Процедури</h4>
+                            <h3>B.D.R. мезотерпия</h3>
+                        </div>
+                    </a>
+                    <a href="procedures.html" class="procedure">
+                        <div class="shadow-bg">
+                            <h4>Процедури</h4>
+                            <h3>Радиочестотен лифтинг</h3>
+                        </div>
+                    </a>
+                    <a href="procedures.html" class="procedure">
+                        <div class="shadow-bg">
+                            <h4>Процедури</h4>
+                            <h3>По поръчка</h3>
+                        </div>
+                    </a>
+                    <a href="procedures.html" class="procedure">
+                        <div class="shadow-bg">
+                            <h4>Процедури</h4>
+                            <h3>LPG борба с целулита</h3>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="index-f">
+                    <h2>Посетете ни отново</h2>
+                    <img src="images/front.jpg" style="width:100%; height: 30%;">
+                </div>
+            </div>
         </main>
         <footer class="site-footer">
             <div class="text footer-div">
                 <h4>За нас</h4>
-                <p class="footer-info">Козметично студио <span class="logo-txt">E &#8226; Salon</span> е едно от първите и най-успешни в бранша. Услугите, които предлагаме, са силно персонализирани и ние осъзнаваме, че наред с нашето студио и процедури, клиентите избират и нашите козметици.</p>
+                <p class="footer-info">Козметично студио <span class="logo-txt">E &#8226; Salon</span> е едно от първите
+                    и най-успешни в бранша. Услугите, които предлагаме, са силно персонализирани и ние осъзнаваме, че
+                    наред с нашето студио и процедури, клиентите избират и нашите козметици.</p>
             </div>
 
             <div class="site-map footer-div">
@@ -96,7 +223,7 @@
             </div>
 
             <div class="copyright footer-div">
-                <h4>© E &#8226; salon</h4>                
+                <h4>© E &#8226; salon</h4>
 
                 <ul class="socials-footer">
                     <li><a href="https://www.facebook.com/ectky"><i class="fab fa-facebook-f"></i></a></li>
