@@ -84,6 +84,16 @@
 .procedures .content {
   grid-area: main;
 }
+.procedures .content button {
+  margin-bottom: 2rem;
+}
+.procedures .content button:hover {
+  background-color: #2b2b2b;
+  color: #faedf2;
+}
+.procedures .content h3 {
+  color: #b47088;
+}
 @media (min-width: 768px) {
   .procedures .content {
     margin-left: 2.5rem;
@@ -94,13 +104,46 @@
     margin-right: 2rem;
   }
 }
+.procedures .gallery {
+  background-image: url("../images/background.jpg");
+  grid-column: -1/1;
+}
+@media (min-width: 768px) {
+  .procedures .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-image: none;
+  }
+}
+@media (min-width: 1024px) {
+  .procedures .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media (min-width: 1250px) {
   .procedures .gallery {
     grid-area: gallery;
+    display: unset;
   }
 }
 .procedures .gallery .img-container:nth-of-type(even) {
   text-align: right;
+}
+@media (min-width: 768px) {
+  .procedures .gallery .img-container {
+    text-align: center !important;
+  }
+}
+@media (min-width: 1024px) {
+  .procedures .gallery .img-container:last-of-type {
+    display: none;
+  }
+}
+@media (min-width: 1250px) {
+  .procedures .gallery .img-container:last-of-type {
+    display: unset;
+  }
 }
 .procedures .gallery .img-container img {
   width: 100%;

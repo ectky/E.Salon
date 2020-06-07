@@ -135,6 +135,18 @@ $light-pink-op:rgba(250, 171, 199, 0.411);
     .content {
         grid-area: main;
 
+        button{
+            margin-bottom: 2rem;
+            &:hover {
+                background-color: $dark-gray;
+                color: $lightest-pink;
+            }
+        }
+
+        h3 {
+            color: $dark-pink;
+        }
+
         @include bp(mobile){   
             margin-left: 2.5rem;
         }
@@ -146,14 +158,44 @@ $light-pink-op:rgba(250, 171, 199, 0.411);
     }
 
     .gallery {
+        background-image: url("../images/background.jpg");
+        grid-column: -1 / 1;
+
+        @include bp(mobile){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            background-image: none;
+        }
+
+        @include bp(laptop){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         @include bp(desktop){
             grid-area: gallery;
+            display: unset;
         }
 
         .img-container {
-
             &:nth-of-type(even){
-                text-align: right;
+                text-align: right;                
+            }
+
+            @include bp(mobile){
+                text-align: center !important;
+            }
+
+            @include bp(laptop){
+                &:last-of-type{
+                    display: none;              
+                }
+            }
+
+            @include bp(desktop){
+                &:last-of-type{
+                    display: unset;              
+                }
             }
 
             img{
