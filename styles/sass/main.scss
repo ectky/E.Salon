@@ -4,6 +4,7 @@ $light-gray:rgb(209, 209, 209);
 $dark-pink:rgb(180, 112, 136);
 $light-pink:rgba(250, 171, 198, 0.705);
 $light-pink-op:rgba(250, 171, 199, 0.411);
+$op-gray:rgba(43, 43, 43,0.3);
 
 @mixin bp($point) {
 
@@ -69,6 +70,16 @@ h5 {
 p {
     margin: 1rem 0 1rem 0;
 }
+
+input, select {
+    width: 80%;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    font-style: italic;
+    margin: 0.8rem 0;
+    border: 0.5px solid $op-gray;                
+}
+
 
 .btn {
     border: none;
@@ -183,7 +194,7 @@ p {
             }
         }
 
-        ul {
+        #my-links {
             justify-content: center;
             font-style: italic;
             padding: 1rem 1rem;

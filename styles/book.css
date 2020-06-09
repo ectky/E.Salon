@@ -1,0 +1,61 @@
+.book {
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem 2rem;
+}
+.book h2 {
+  text-align: center;
+  color: #b47088;
+}
+.book .form-container label {
+  font-size: 1.3rem;
+}
+.book .form-container input, .book .form-container select {
+  width: 100%;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+}
+.book .form-container input#password {
+  -webkit-text-security: disc;
+}
+.book .form-container #hour, .book .form-container #minutes {
+  width: 50px;
+}
+.book .form-container #submit {
+  background-color: #b47088;
+  color: white;
+  width: unset;
+}
+.book .form-container #submit:hover {
+  background-color: rgba(250, 171, 198, 0.705);
+  color: #2b2b2b;
+}
+@media (min-width: 768px) {
+  .book .form-container form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .book .form-container form .personal, .book .form-container form .procedure-info {
+    flex-basis: 45%;
+  }
+  .book .form-container form .submit-btn {
+    width: 60%;
+    flex-basis: 100%;
+  }
+  .book .form-container form .submit-btn p {
+    text-align: center;
+  }
+}
+@media (min-width: 1024px) {
+  .book .form-container form {
+    width: 80%;
+    margin: auto;
+  }
+}
+@media (min-width: 1250px) {
+  .book .form-container form {
+    width: 60%;
+  }
+}
+
+/*# sourceMappingURL=book.css.map */

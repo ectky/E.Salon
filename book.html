@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E &#8226; SALON - Резервирай сега</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body onload="bodyLoaded()" onscroll="scrollPage()">
+    <a name="top"></a>
+    <div class="container">
+        <a href="#top" class="back-to-top">Back to top<i class="fas fa-arrow-circle-up"></i></a>
+        <header class="site-header">
+            <div class="logo-line">
+                <a href="index.html">
+                    <h1><span class="bold">E &#8226; </span>salon</h1>
+                </a>
+                <a href="book.html" class="book-now btn">резервирай сега</a>
+            </div>
+            <nav class="site-nav" id="navbar">
+                <a href="javascript:void(0);" class="burger-menu" onclick="burgerMenu()">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <ul id="my-links">
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="about.html">За нас</a></li>
+                    <li><a href="procedures.html">Процедури</a></li>
+                    <li><a href="pricing.html">Цени</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="site-main">
+            <div class="book">
+                <h2>Запишете час онлайн сега</h2>
+                <section class="form-container">
+                    <form  id="bookForm" method="POST" action="javascript:void(0);" onsubmit="book()">
+                        <fieldset class="personal">
+                            <p>
+                                <label for="name">Име</label><br>
+                                <input type="text" name="name" id="name" placeholder="Име...">
+                            </p>
+                            <p>
+                                <label for="surname">Фамилия</label><br>
+                                <input type="text" name="surname" id="surname" placeholder="Фамилия...">
+                            </p>
+                            <p>
+                                <label for="email">Имейл</label><br>
+                                <input type="text" name="email" id="email" placeholder="Имейл...">
+                            </p>
+                            <p>
+                                <label for="password">Парола</label><br>
+                                <input type="text" name="password" id="password" placeholder="Парола...">
+                            </p>
+                        </fieldset>
+                        <fieldset class="procedure-info">
+                            <p>
+                                <label for="date">Дата</label><br>
+                                <input type="text" name="date" id="date" placeholder="Дата...">
+                            </p>
+                            <p>
+                                <label for="hour">Час</label><br>
+                                <input type="text" name="hour" id="hour" placeholder="12">
+                                <label for="minutes">:</label>
+                                <input type="text" name="minutes" id="minutes" placeholder="30">
+                            </p>
+                            <p>
+                                <label for="procedure">Процедура</label><br>
+                                <select name="procedure" id="procedure" onchange="getPrice()">
+                                    <option selected disabled>Процедура</option>
+                                    <option disabled>Почистване</option>
+                                    <option value="1">Водно</option>
+                                    <option value="2">Лицево</option>
+                                    <option value="3">Пилинг</option>
+                                    <option value="4">Хидратация</option>
+                                    <option disabled>Терапии</option>
+                                    <option value="5">OSMOPEEL</option>
+                                    <option value="6">Хиалурон</option>
+                                    <option value="7">Спирулина</option>
+                                    <option value="8">ESTHELIFT</option>
+                                    <option disabled>Процедури</option>
+                                    <option value="9">Лифтмасаж с LPG</option>
+                                    <option value="10">Радиочестотен лифтинг</option>
+                                    <option value="11">Супертерапия 3 в 1</option>
+                                    <option value="12">Кислородна мезотерапия</option>
+                                    <option value="13">LPG борба с целулита</option>
+                                    <option value="14">B.D.R. мезотерпия</option>
+                                    <option value="15">"Сърцето на океана"</option>
+                                    <option value="16">По поръчка</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="price">Цена</label><br>
+                                <input type="text" name="price" id="price"
+                                    placeholder="Цена..." disabled>
+                            </p>
+                        </fieldset>
+                        <fieldset class="submit-btn">
+                            <p>
+                                <input type="submit" id="submit" class="btn" value="резервирай сега">
+                            </p>
+                        </fieldset>
+                    </form>
+                </section>
+                <div id="dialog" title="Невалидни данни">
+                    <p id="error-message"></p>
+                </div>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <div class="text footer-div">
+                <h4>За нас</h4>
+                <p class="footer-info">Козметично студио <span class="logo-txt">E &#8226; Salon</span> е едно от първите
+                    и най-успешни в бранша. Услугите, които предлагаме, са силно персонализирани и ние осъзнаваме, че
+                    наред с нашето студио и процедури, клиентите избират и нашите козметици.</p>
+            </div>
+
+            <div class="site-map footer-div">
+                <h4>Меню</h4>
+                <ul class="map">
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="about.html">За нас</a></li>
+                    <li><a href="procedures.html">Процедури</a></li>
+                    <li><a href="pricing.html">Цени</a></li>
+                </ul>
+            </div>
+
+            <div class="ig-widget footer-div">
+                <h4>инстаграм</h4>
+
+                <div class="ig-pics">
+                    <ul>
+                        <li>
+                            <a href="https://www.instagram.com/p/BykF_STF6r3/?utm_source=ig_web_copy_link">
+                                <img src="images/ig-1.jpg" alt="instagram picture">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/p/BxkCgiuFde9/?utm_source=ig_web_copy_link">
+                                <img src="images/ig-2.jpg" alt="instagram picture">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/p/BvpmnkLF9DP/?utm_source=ig_web_copy_link">
+                                <img src="images/ig-3.jpg" alt="instagram picture">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/p/Bt9DU-6l6A9/?utm_source=ig_web_copy_link">
+                                <img src="images/ig-4.jpg" alt="instagram picture">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/p/Bo7EvGkHWwP/?utm_source=ig_web_copy_link">
+                                <img src="images/ig-5.jpg" alt="instagram picture">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/p/By5uaIQFc1g/?utm_source=ig_web_copy_link">
+                                <img src="images/ig-6.jpg" alt="instagram picture">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright footer-div">
+                <h4>© E &#8226; salon</h4>
+
+                <ul class="socials-footer">
+                    <li><a href="https://www.facebook.com/ectky"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

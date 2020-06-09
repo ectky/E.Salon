@@ -30,6 +30,15 @@ p {
   margin: 1rem 0 1rem 0;
 }
 
+input, select {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font-style: italic;
+  margin: 0.8rem 0;
+  border: 0.5px solid rgba(43, 43, 43, 0.3);
+}
+
 .btn {
   border: none;
   margin: 1rem 0;
@@ -131,32 +140,32 @@ p {
     display: none;
   }
 }
-.site-header .site-nav ul {
+.site-header .site-nav #my-links {
   justify-content: center;
   font-style: italic;
   padding: 1rem 1rem;
   display: none;
 }
 @media (min-width: 768px) {
-  .site-header .site-nav ul {
+  .site-header .site-nav #my-links {
     display: flex !important;
   }
 }
-.site-header .site-nav ul li {
+.site-header .site-nav #my-links li {
   margin: 2vh 3vw;
   text-align: center;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
-  .site-header .site-nav ul li {
+  .site-header .site-nav #my-links li {
     margin: 0 3vw;
   }
 }
-.site-header .site-nav ul li a {
+.site-header .site-nav #my-links li a {
   color: #999999;
 }
-.site-header .site-nav ul li a:hover {
+.site-header .site-nav #my-links li a:hover {
   color: #d1d1d1;
 }
 

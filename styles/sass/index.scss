@@ -371,19 +371,13 @@ $light-pink-op:rgba(250, 171, 199, 0.411);
                 font-style: italic;
                 color: $dark-gray;
             }
-
-            input {
-                width: 80%;
-                box-sizing: border-box;
-                padding: 0.5rem;
-                font-style: italic;
-                margin: 0.8rem 0;
-                border: 0.5px solid $op-gray;                
-            }
-
+            
             input[type="submit"]{
                 background-color: $op-gray;
-                width: 60%;
+
+                @include bp(desktop){
+                   width: 60%;
+                }
 
                 &:hover {
                     background-color: $lightest-pink;

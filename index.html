@@ -11,9 +11,13 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
-<body onload="bodyLoaded()" onscroll="scrollPage()" >
+<body onload="bodyLoaded()" onscroll="scrollPage()">
     <a name="top"></a>
     <div class="container">
         <a href="#top" class="back-to-top">Back to top<i class="fas fa-arrow-circle-up"></i></a>
@@ -41,17 +45,17 @@
                 <div class="slideshow-container">
                     <div class="mySlides fade">
                         <div class="numbertext">1 / 3</div>
-                        <img src="images/goodhair.jpg" style="width:100%">
+                        <img src="images/goodhair.jpg" alt="good hair" style="width:100%">
                     </div>
 
                     <div class="mySlides fade">
                         <div class="numbertext">2 / 3</div>
-                        <img src="images/makeup.jpg" style="width:100%">
+                        <img src="images/makeup.jpg" alt="makeup" style="width:100%">
                     </div>
 
                     <div class="mySlides fade">
                         <div class="numbertext">3 / 3</div>
-                        <img src="images/stylists.jpg" style="width:100%">
+                        <img src="images/stylists.jpg" alt="our stylists" style="width:100%">
                     </div>
 
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -63,14 +67,16 @@
                         <span class="dot" onclick="currentSlide(3)"></span>
                     </div>
                 </div>
-                
-                <div class="main-container">    
+
+                <div class="main-container">
                     <div class="content">
                         <div class="thank-you">
                             <h2>Благодарим Ви!</h2>
-                            <p>Ние сме щастливи и поразени от размерите на подкрепата и добротата на нашите клиенти. Мнозина
+                            <p>Ние сме щастливи и поразени от размерите на подкрепата и добротата на нашите клиенти.
+                                Мнозина
                                 питаха как могат да продължат да показват подкрепата си през това време.</p>
-                            <p>Ако искате да запишете своят час в <span class="logo-txt">E &#8226; Salon</span>, който ще
+                            <p>Ако искате да запишете своят час в <span class="logo-txt">E &#8226; Salon</span>, който
+                                ще
                                 бъде
                                 осъществен в най-скоро време, моля кликнете тук:</p>
                             <button onclick="location.href='book.html'" class="book-btn btn">Резервирай</button>
@@ -80,30 +86,36 @@
                         <div class="about-us">
                             <h5>oт 1995г.</h5>
                             <h2>E &#8226; Salon</h2>
-                            <p>Имаме опита и волята да бъдем сред най-добрите. Дължим успеха си на доверието и лоялността на
+                            <p>Имаме опита и волята да бъдем сред най-добрите. Дължим успеха си на доверието и
+                                лоялността на
                                 нашите клиенти. Основните ни ценности са честност, почтеност, уважение към клиента и
                                 зачитане на
-                                неговите реални потребности. Вярваме в професионалния подход без компромис. Извършваме само
+                                неговите реални потребности. Вярваме в професионалния подход без компромис. Извършваме
+                                само
                                 изпитани и доказано ефективни козметични услуги под контрола на дерматолозите от
                                 Дерматологичен
                                 център <span class="logo-txt">E &#8226; Salon</span>. Не спираме да се учим и
                                 усъвършенстваме, както и да обновяваме апаратурата и
                                 продуктите, които ползваме, спрямо последните иновации в грижата за кожата.</p>
                             <button onclick="location.href='about.html'" class="about-btn btn">Прочети още</button>
-                        </div>                    
+                        </div>
                     </div>
                     <aside class="index-sidebar">
                         <div class="voucher">
-                            <h4>Вземете ваучер за безплатни процедури в <span class="logo-txt">E &#8226; Salon</span></h4>
-                            <img src="images/Voucher_Home_Pagе-04.png" alt="voucher" >
+                            <h4>Вземете ваучер за безплатни процедури в <span class="logo-txt">E &#8226; Salon</span>
+                            </h4>
+                            <img src="images/Voucher_Home_Pagе-04.png" alt="voucher">
                         </div>
                         <div class="subscribe">
                             <h4>Абонирайте се, за да получавате ежеседмични оферти от нас</h4>
-                            <form action="post">
-                                <input type="text" placeholder="Име...">
-                                <input type="text" placeholder="Имейл...">
+                            <form id="subscribeForm" method="POST" action="javascript:void(0);" onsubmit="subscribe()">
+                                <input type="text" id="name" placeholder="Име...">
+                                <input type="text" id="email" placeholder="Имейл...">
                                 <input class="btn" type="submit" value="Абонирай се">
                             </form>
+                        </div>
+                        <div id="dialog" title="Невалидни данни">
+                            <p id="error-message"></p>
                         </div>
                     </aside>
                 </div>
@@ -158,10 +170,10 @@
                         </div>
                     </a>
                 </div>
-                
+
                 <div class="index-f">
                     <h2>Посетете ни отново</h2>
-                    <img src="images/front.jpg" style="width:100%; height: 30%;">
+                    <img src="images/front.jpg" alt="woman legs" style="width:100%; height: 30%;">
                 </div>
             </div>
         </main>

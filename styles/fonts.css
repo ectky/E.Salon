@@ -1,34 +1,26 @@
-:root {
-  --fs-phone: 12px;
-  --fs-mobile: 14px;
-  --fs-laptop: 16px;
-  --fs-desktop: 18px;
-  --fs-desktoplarge: 20px;
-}
-
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 24px;
-  font-size: var(--fs-phone);
+  font-size: 12px;
 }
 @media (min-width: 768px) {
   body {
-    font-size: var(--fs-mobile);
+    font-size: 14px;
   }
 }
 @media (min-width: 1024px) {
   body {
-    font-size: var(--fs-laptop);
+    font-size: 16px;
   }
 }
 @media (min-width: 1250px) {
   body {
-    font-size: var(--fs-desktop);
+    font-size: 18px;
   }
 }
 @media (min-width: 1600px) {
   body {
-    font-size: var(--fs-desktoplarge);
+    font-size: 20px;
   }
 }
 
@@ -64,7 +56,7 @@ h6 {
   font-size: 1.2rem;
 }
 
-input {
+input, select {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
 }

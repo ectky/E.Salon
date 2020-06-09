@@ -1,0 +1,118 @@
+$main-txt: #999999; 
+$dark-gray:rgb(43, 43, 43);
+$op-gray:rgba(43, 43, 43,0.3);
+$light-gray:rgb(209, 209, 209);
+$lightest-pink:rgb(250, 237, 242);
+$dark-pink:rgb(180, 112, 136);
+$light-pink:rgba(250, 171, 198, 0.705);
+$light-pink-op:rgba(250, 171, 199, 0.411);
+
+@mixin bp($point) {
+
+    @if $point == desktoplarge {
+        @media (min-width: 1600px) {
+            @content;
+        }
+    }
+
+    @else if $point == desktop {
+        @media (min-width: 1250px) {
+            @content;
+        }
+    }
+
+    @else if $point == laptop {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point == mobile {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $point == 690 {
+        @media (min-width: 690px) {
+            @content;
+        }
+    }
+
+    @else if $point == phone {
+        @media (min-width: 480px) {
+            @content;
+        }
+    }
+}
+
+.book {
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem 2rem;
+
+    h2 {
+        text-align: center;
+        color: $dark-pink;
+    }
+
+    .form-container {
+        label {
+            font-size: 1.3rem;
+        }
+
+        input, select {
+            width: 100%;
+            margin-top: 0.5rem;
+            box-sizing: border-box;
+        }
+
+        input#password {
+            -webkit-text-security: disc;
+        }
+
+        #hour, #minutes {
+            width: 50px;
+        }
+
+        #submit {
+            background-color: $dark-pink;
+            color: white;
+            width: unset;
+
+            &:hover {
+                background-color: $light-pink;
+                color: $dark-gray;
+            }
+        }
+
+        form {
+            @include bp(mobile){
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .personal, .procedure-info {
+                    flex-basis: 45%;
+                }
+
+                .submit-btn {
+                    width: 60%;
+                    flex-basis: 100%;
+                    
+                    p{
+                        text-align: center;
+                    }
+                }
+            }
+
+            @include bp(laptop){
+                width: 80%;
+                margin: auto;
+            }
+
+            @include bp(desktop){
+                width: 60%;
+            }
+        }
+    }
+}

@@ -302,17 +302,13 @@
   font-style: italic;
   color: #2b2b2b;
 }
-.home .index-sidebar .subscribe input {
-  width: 80%;
-  box-sizing: border-box;
-  padding: 0.5rem;
-  font-style: italic;
-  margin: 0.8rem 0;
-  border: 0.5px solid rgba(43, 43, 43, 0.3);
-}
 .home .index-sidebar .subscribe input[type=submit] {
   background-color: rgba(43, 43, 43, 0.3);
-  width: 60%;
+}
+@media (min-width: 1250px) {
+  .home .index-sidebar .subscribe input[type=submit] {
+    width: 60%;
+  }
 }
 .home .index-sidebar .subscribe input[type=submit]:hover {
   background-color: #faedf2;
